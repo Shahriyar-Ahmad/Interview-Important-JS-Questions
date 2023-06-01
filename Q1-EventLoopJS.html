@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Loop JS</title>
+</head>
+
+<body>
+    <h3 class="">What is Event Loop In JS?</h3>
+    <p>The event loop in JavaScript is a process that constantly
+        checks for pending tasks or events.
+        It executes the associated code for those tasks in an order
+        that ensures efficient handling of asynchronous operations
+        without blocking the main program execution.</p>
+    <p><b>Call Stack:</b>
+        The call stack is a data structure that keeps track of function
+        calls during program execution. It follows the Last-In, First-Out (LIFO) principle,
+        meaning that the last function pushed onto the stack is the first one to be popped off and executed. Whenever a
+        function is called, it is added to the top of the call stack,
+        and when a function completes, it is removed from the stack.</p>
+
+        <p><b>Event Queue:</b>
+        The event queue is a data structure that holds events and their associated callback functions.
+        When an event occurs, its corresponding callback function is added to the event queue.
+        The event queue follows a First-In, First-Out (FIFO) order,
+        meaning that the first event added is the first one to be processed.
+        </p>
+        <p><b>Event Loop:</b>
+            The event loop is a continuous process
+            that manages the execution of code in an asynchronous and non-blocking manner.
+            It constantly checks the call stack and the event queue,
+            ensuring that the call stack is empty before taking events from the queue
+            and executing their associated callback functions.</p>
+        <button>Click</button>
+        <script>
+            // First Expriment
+            console.log("Experiment 1")
+            console.log("Start");
+            setTimeout(() => {
+                console.log("Center")
+            });
+            console.log("End");
+            /* OutPut:
+             Start
+             End
+             Center        
+            Conclusion:
+            Set Timeout is non-blocking and take some milisecond to 
+            excut, and else code excute without any distrubance. 
+            Therefor it excute in this in the end of first console
+            and second console */
+
+            // Second Expriment
+            console.log("Experiment 2");
+            console.log("Start");
+            setTimeout(() => {
+                console.log("Center")
+            }, 0);
+            console.log("End");
+            /* OutPut:
+             Start
+             End
+             Center        
+            Conclusion:
+            Reasulth are similar to first expriment..
+            */
+            // Example 3
+            setTimeout(() => {
+                console.log('Timeout event occurred');
+            }, 5000);
+
+            const button = document.querySelector('button');
+            button.addEventListener('click', () => {
+                console.log('Button clicked');
+            });
+
+        </script>
+</body>
+
+</html>
