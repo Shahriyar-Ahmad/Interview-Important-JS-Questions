@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Variable and Their Scope</title>
+</head>
+
+<body>
+    <h3>What is Deference between let,const, and var?</h3>
+    <p>They all are keywords that are use in JS to start a variable, they all use to
+        declare a varible , but have some deferences that we explore now...</p>
+    <b>var:</b>
+    <p>Var is most knowing keyword to declare a variable in js and many other language. It become less using after
+        comming his alternate like let, const in js. It has globle and funcitonal scope. It can be reasign and
+        redeclare.</p>
+    <b>let:</b>
+    <p>Let is most common use keyword to use declare a variable after ECMA7. It is block scope varible , we can reasign
+        this in their scope but not redeclare.</p>
+    </p>
+    <b>Const:</b>
+    <p>Const is third keyword for declaring a variable in js , it is also block scope like let but it we cannot reasign
+        and redeclare in their scope.</p>
+    <h3>What is Scope in JS and How many types?</h3>
+    <p>Scope mean in js an area or space where you can access a variable and Js have three types of Scope that are <li>
+            Global Scope</li>
+        <li>Functional Scope</li>
+        <li>Block Scope</li>
+    </p>
+    <b>Global Scope:</b>
+    <p>Global scope mean in js when you declare a variable out of functons and blocks than you can access the
+        variable all of the file , from any funciton and block.
+    </p>
+    <b>Functional Scope:</b>
+    <p>Its mean when you declare a variable in funciton, then you can access the variable from
+        any place of that funciton, it is called funcitonal scope.
+    </p>
+    <b>Block Scope:</b>
+    <p>Block scope mean in js declare a variable in block like {} if, for then you cannot access
+        the variable out of these block, it is called block scope.
+    </p>
+    <script>
+        // var example
+        function example() {
+            var x = 10;
+            if (true) {
+                var x = 20; // Redeclaration and reassignment of 'x'
+                console.log(x); // Output: 20
+            }
+            console.log(x); // Output: 20
+        }
+        // let example
+        function example() {
+            let x = 10;
+            if (true) {
+                let x = 20; // New block scope variable 'x'
+                console.log(x); // Output: 20
+            }
+            console.log(x); // Output: 10 (outer block scope variable)
+        }
+        // const example
+        function example() {
+            const x = 10;
+            if (true) {
+                const x = 20; // New block scope constant 'x'
+                console.log(x); // Output: 20
+            }
+            console.log(x); // Output: 10 (outer block scope constant)
+        }
+
+    </script>
+</body>
+
+</html>
