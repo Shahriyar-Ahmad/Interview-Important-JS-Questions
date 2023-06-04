@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Clusore</title>
+</head>
+
+<body>
+    <h3>What is Clusore in JavaScript?</h3>
+    <p>A closure is like a backpack that a function carries with it, 
+        containing all the variables it needs from its outer environment.
+         It allows the function to access and use those variables, even
+          if the outer function has completed. </p>
+          <b>What is Lexical Scope?</b>
+          <p>Lexical scope refers to how variables are defined and accessed based on their position in the source code, providing a set of rules for variable visibility and accessibility.</p>
+    <script>
+        function outer() {
+            let outerVar = 10;
+
+            function inner() {
+                console.log(outerVar); // Accessing outerVar from the outer scope
+            }
+
+            return inner;
+        }
+
+        const closureFunc = outer(); // The outer function has finished executing, but closureFunc still has access to outerVar
+        closureFunc(); // Output: 10
+
+    </script>
+</body>
+
+</html>
