@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Function </title>
+</head>
+<body>
+    <h3>What is Map, Filter, and Reduce Function?</h3>
+    <p><b>Map:</b>map:
+
+        Imagine you have a list of items (an array), and you want to transform each item into something else.
+        With map, you can define a function that specifies how each item should be transformed.
+        The map method applies this function to every item in the array, creating a new array with the transformed values.
+        Think of it like taking a list of ingredients and using a recipe to convert each ingredient into a different form or state.</p>
+    <p><b>Filter:</b>Imagine you have a list of items (an array), and you want to select only certain items based on a condition.
+        With filter, you can define a function that checks if an item meets the specified condition.
+        The filter method applies this function to each item in the array and creates a new array containing only the items that pass the condition.
+        It's like using a filter to separate the items you want to keep from the ones you want to discard.</p>
+     <p><b>Reduce:</b>Imagine you have a list of items (an array), and you want to combine them into a single value.
+        With reduce, you can define a function that specifies how the values should be combined or accumulated.
+        The reduce method applies this function to each item in the array, keeping track of an accumulator that holds the intermediate result.
+        It's like having a running total or a summary that you update with each item, ultimately resulting in a single value.</p>
+        <script>
+            // map example
+            const numbers = [1, 2, 3, 4];
+const doubled = numbers.map((num) => num * 2);
+console.log(doubled); // Output: [2, 4, 6, 8]
+     // filter example
+     const numbers1 = [1, 2, 3, 4];
+const evenNumbers = numbers1.filter((num) => num % 2 === 0);
+console.log(evenNumbers); // Output: [2, 4]
+// reduce example
+const numbers2 = [1, 2, 3, 4];
+const sum = numbers2.reduce((accumulator, num) => accumulator + num, 0);
+console.log(sum); // Output: 10
+
+        </script>
+
+    </body>
+</html>
