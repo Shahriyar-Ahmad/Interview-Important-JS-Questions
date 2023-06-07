@@ -5,9 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-  
-    </style>
 </head>
 <body>
     <h3>What is this keyword in JS?</h3>
@@ -66,6 +63,18 @@ function refer to the properties of the newly created object.
 The this keyword allows the constructor function 
 to set the initial state (name and age) of the object being created.
 */
+// Event Handlers
+function handleClick() {
+  console.log(`Button clicked by: ${this.textContent}`);
+}
+/*
+In this example, the onclick event handler is assigned to the button element. 
+When the button is clicked, the handleClick function is invoked, and this.textContent 
+inside the function refers to the button element that triggered the event. The this 
+keyword allows the event handler to access properties of the element, 
+such as its textContent.
+*/
+
     </script>
         </body>
 </html>
