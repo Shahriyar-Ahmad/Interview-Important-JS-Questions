@@ -1,80 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <h3>What is this keyword in JS?</h3>
-    <p>In JavaScript, the `this` keyword refers to the context in which a function is called. It allows functions to access and operate on the properties and methods of an object.
+    <p>In JavaScript, the `this` keyword refers to the context in which a function is called. It allows functions to
+        access and operate on the properties and methods of an object.
 
-        The purpose of the `this` keyword is to provide a way for functions to access the data and behavior of the object they belong to or are invoked on. It helps in creating reusable code and enables functions to work with different objects dynamically.
-        
+        The purpose of the `this` keyword is to provide a way for functions to access the data and behavior of the
+        object they belong to or are invoked on. It helps in creating reusable code and enables functions to work with
+        different objects dynamically.
+
         Here's a simple explanation of why and how the `this` keyword is used:
         <br>
-      <b>1. Object Method Invocation:</b>  
-           - When a function is defined as a method within an object, the `this` keyword inside that function refers to the object itself.
-           - It allows the function to access and manipulate the object's properties and methods.
+        <b>1. Object Method Invocation:</b>
+        - When a function is defined as a method within an object, the `this` keyword inside that function refers to the
+        object itself.
+        - It allows the function to access and manipulate the object's properties and methods.
         <br>
-       <b>2. Constructor Functions:</b>  
-           - In JavaScript, constructor functions are used to create new objects from a template (constructor).
-           - Inside the constructor function, the `this` keyword refers to the newly created object being constructed.
-           - It enables the constructor to set the object's initial state and define its properties and methods.
+        <b>2. Constructor Functions:</b>
+        - In JavaScript, constructor functions are used to create new objects from a template (constructor).
+        - Inside the constructor function, the `this` keyword refers to the newly created object being constructed.
+        - It enables the constructor to set the object's initial state and define its properties and methods.
         <br>
-        <b>3. Event Handlers:</b> 
-           - In event-driven programming, when an event occurs (e.g., a button click), event handlers (functions) are invoked.
-           - Inside an event handler, the `this` keyword usually refers to the element that triggered the event.
-           - It allows the handler to access and modify properties or behaviors of the element.
-        
-           The `this` keyword provides a dynamic way to reference the context of a function, allowing it to interact with the relevant object or element. It promotes reusability and flexibility in JavaScript code by allowing functions to adapt to different contexts and operate on specific objects or elements as needed.</p>
+        <b>3. Event Handlers:</b>
+        - In event-driven programming, when an event occurs (e.g., a button click), event handlers (functions) are
+        invoked.
+        - Inside an event handler, the `this` keyword usually refers to the element that triggered the event.
+        - It allows the handler to access and modify properties or behaviors of the element.
+
+        The `this` keyword provides a dynamic way to reference the context of a function, allowing it to interact with
+        the relevant object or element. It promotes reusability and flexibility in JavaScript code by allowing functions
+        to adapt to different contexts and operate on specific objects or elements as needed.
+    </p>
     <script>
         // Object Method Invocation:
         const person = {
-  name: "John",
-  age: 30,
-  greet: function () {
-    console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
-  },
-};
+            name: "Ahmad",
+            age: 30,
+            greet: function () {
+                console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
+            },
+        };
 
-person.greet(); // Output: Hello, my name is John and I am 30 years old.
+        /*   In this example, this.name and this.age inside the greet method refer to the 
+        name and age properties of the person object. 
+        The this keyword allows the function to access the data (name and age) 
+         within the object it belongs to.*/
 
-/*   In this example, this.name and this.age inside the greet method refer to the 
-name and age properties of the person object. 
-The this keyword allows the function to access the data (name and age) 
- within the object it belongs to.*/
+        // Constructor Functions:
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+            this.greet = function () {
+                console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
+            };
+        }
 
- // Constructor Functions:
- function Person(name, age) {
-  this.name = name;
-  this.age = age;
-  this.greet = function () {
-    console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
-  };
-}
+        const john = new Person("Ali", 20);
+        john.greet(); // Output: Hello, my name is John and I am 30 years old.
 
-const john = new Person("John", 30);
-john.greet(); // Output: Hello, my name is John and I am 30 years old.
-
-/*In this example, this.name and this.age inside the Person constructor 
-function refer to the properties of the newly created object. 
-The this keyword allows the constructor function 
-to set the initial state (name and age) of the object being created.
-*/
-// Event Handlers
-function handleClick() {
-  console.log(`Button clicked by: ${this.textContent}`);
-}
+        /*In this example, this.name and this.age inside the Person constructor 
+        function refer to the properties of the newly created object. 
+        The this keyword allows the constructor function 
+        to set the initial state (name and age) of the object being created.
+        */
+        // Event Handlers
+        function handleClick() {
+            console.log(`Button clicked by: ${this.textContent}`);
+        }
 /*
-In this example, the onclick event handler is assigned to the button element. 
-When the button is clicked, the handleClick function is invoked, and this.textContent 
-inside the function refers to the button element that triggered the event. The this 
-keyword allows the event handler to access properties of the element, 
-such as its textContent.
-*/
+        In this example, the onclick event handler is assigned to the button element. 
+        When the button is clicked, the handleClick function is invoked, and this.textContent 
+        inside the function refers to the button element that triggered the event. The this 
+        keyword allows the event handler to access properties of the element, 
+        such as its textContent.
+        */
 
     </script>
-        </body>
+</body>
+
 </html>
